@@ -2,4 +2,32 @@ h1,
 h2 {
   color: #a4a400;
   background-color: #f0f0f0;
+  font-weight: normal;
+  text-transform: uppercase;
+}
+
+.text-normal {
+  font-size: small;
+}
+
+.pie-bullet {
+  list-style: none;
+}
+
+.pie-bullet li {
+  position: relative;
+  padding-left: 25px;
+  margin-bottom: 10px;
+}
+
+.pie-bullet li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  background-image: url("/asset/images/pie/pie_bullet.png");
+  background-size: cover;
 }
