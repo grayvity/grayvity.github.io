@@ -93,3 +93,6 @@ const equalToThree = a.filter(function (elem) {
   return elem === 3;
 });
 console.log("Equals to three: ", equalToThree);
+
+const multiplied = multiply(a);
+console.log("Multiplied all elements: ", multiplied);
