@@ -87,9 +87,9 @@ const a = [1, 3, 5, 3, 3];
 const multipliedByTen = a.map(function (elem) {
   return elem * 10;
 });
-console.log(multipliedByTen);
+console.log("Multiplied by ten: ", multipliedByTen);
 
 const equalToThree = a.filter(function (elem) {
   return elem === 3;
 });
-console.log(equalToThree);
+console.log("Equals to three: ", equalToThree);
