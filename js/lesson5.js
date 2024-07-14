@@ -8,10 +8,17 @@ const validate = (callback, args, expected) => {
   }(${args.join(", ")}) is ${expected}. Actual value is ${actual}`;
 
   tracking_task_number++;
+  let result = expected === actual;
+  if (expected instanceof Array) {
+    result = true;
+    for (let i = 0; i < expected.length; i++)
+      if (expected[i] !== actual[i]) {
+        result = false;
+        break;
+      }
+  }
 
-  return `${resultMessage} ${
-    expected === actual ? "Test Succeeded." : "Test Failed"
-  }`;
+  return `${resultMessage} ${result ? "Test Succeeded." : "Test Failed"}`;
 };
 
 const max = (a, b) => {
@@ -39,35 +46,50 @@ const multiply = (array = []) => {
   }, 1);
 };
 
+const reverse = (str) => {
+  return str.split("").reverse().join("");
+};
+
+const findLongestWord = (words) => {
+  if (words.length === 0) return 0;
+
+  return words.reduce((maxLength, word) => {
+    return Math.max(maxLength, word.length);
+  }, 0);
+};
+
+const filterLongWords = (words, i) => {
+  return words.filter((word) => word.length > i);
+};
+
 const testCases = [
   validate(max, [10, 20], 20),
   validate(maxOfThree, [10, 20, 15], 20),
   validate(isVowel, ["a"], true),
   validate(sum, [[1, 2, 3, 4]], 10),
   validate(multiply, [[1, 2, 3, 4]], 24),
+  validate(reverse, ["Uguumur"], "rumuugU"),
+  validate(
+    findLongestWord,
+    [["short", "not the longest", "1234567890thisisthelongest"]],
+    26
+  ),
+  validate(
+    filterLongWords,
+    [["one", "two", "Answer1", "Answer2"], 5],
+    ["Answer1", "Answer2"]
+  ),
 ];
 
 testCases.forEach((testCase) => console.log(testCase));
 
-// const a = [1, 3, 5, 3, 3];
-// const b = a.map(function (elem, i, array) {
-//   return elem + 3;
-// });
-// console.log(b);
-// const c = a.filter(function (elem, i, array) {
-//   return elem !== 3;
-// });
-// console.log(c);
-// const d = a.reduce(function (prevValue, elem, i, array) {
-//   return prevValue + elem;
-// });
-// console.log(d);
+const a = [1, 3, 5, 3, 3];
+const multipliedByTen = a.map(function (elem) {
+  return elem * 10;
+});
+console.log(multipliedByTen);
 
-// const d2 = a.find(function (elem) {
-//   return elem > 1;
-// }); //3
-// const d3 = a.findIndex(function (elem) {
-//   return elem > 1;
-// }); //1
-// console.log(d2);
-// console.log(d3);
+const equalToThree = a.filter(function (elem) {
+  return elem === 3;
+});
+console.log(equalToThree);
