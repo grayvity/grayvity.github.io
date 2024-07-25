@@ -12,13 +12,15 @@
       <textarea id="text-area" cols="80" rows="20"></textarea>
       <fieldset>
         <legend>Play Controls:</legend>
-        <button id="start">Start</button>
-        <button disabled="disabled" id="stop">Stop</button>
+        <button id="start" onclick="startAnimation()">Start</button>
+        <button disabled="disabled" onclick="stopAnimation()" id="stop">
+          Stop
+        </button>
       </fieldset>
 
       <fieldset>
         <legend>Animation:</legend>
-        <select id="animation">
+        <select id="animation" onchange="animationChangedHandler()">
           <option selected="selected" value="Blank">Blank</option>
           <option value="Exercise">Exercise</option>
           <option value="Juggler">Juggler</option>
@@ -28,7 +30,7 @@
       </fieldset>
       <fieldset>
         <legend>Size:</legend>
-        <select id="fontsize">
+        <select id="fontsize" onchange="sizeChangedHandler(event)">
           <option value="Tiny">Tiny</option>
           <option value="Small">Small</option>
           <option value="Medium" selected="selected">Medium</option>
@@ -39,7 +41,13 @@
       </fieldset>
       <fieldset>
         <legend>Speed:</legend>
-        <label><input id="turbo" type="checkbox" />Turbo</label>
+        <label
+          ><input
+            id="turbo"
+            type="checkbox"
+            onchange="speedChangedHandler()"
+          />Turbo</label
+        >
       </fieldset>
     </div>
     <div id="validate">

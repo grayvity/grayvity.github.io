@@ -7,6 +7,7 @@
   font-family: monospace;
   font-size: 12pt;
   width: 100%;
+  max-height: 100vh;
 }
 
 fieldset {
