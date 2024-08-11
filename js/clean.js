@@ -45,7 +45,6 @@ $(document).ready(function () {
     circle.style.width = initialWidth + "px";
     circle.style.height = initialWidth + "px";
 
-    // Random position within the container
     const maxX = container.clientWidth - initialWidth;
     const maxY = container.clientHeight - initialWidth;
     const randomX = Math.random() * maxX;
