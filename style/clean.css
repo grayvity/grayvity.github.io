@@ -1,0 +1,74 @@
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+#container {
+  position: relative;
+}
+
+button {
+  cursor: pointer;
+}
+
+.circle {
+  position: absolute;
+  border-radius: 50%;
+  background-color: #21c3d9;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.circle:nth-child(1n) {
+  background-color: #3498db;
+}
+
+.circle:nth-child(2n) {
+  background-color: #e74c3c;
+}
+
+.circle:nth-child(3n) {
+  background-color: #f39c12;
+}
+
+.circle:nth-child(4n) {
+  background-color: #2ecc71;
+}
+
+.circle:nth-child(5n) {
+  background-color: #9b59b6;
+}
+
+.circle:nth-child(6n) {
+  background-color: #1abc9c;
+}
+
+.circle:hover {
+  background-color: #21c3d985; /* Change color on hover */
+}
+
+.settings {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  top: 20px;
+  left: 20px;
+  width: 300px;
+}
+
+.form-input {
+  width: 100%;
+  display: flex;
+  gap: 4px;
+  justify-content: space-between;
+}
+
+.form-input label {
+  font-weight: bold;
+}

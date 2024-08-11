@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Clean Screen Lab</title>
+    <link rel="stylesheet" href="/style/clean.css" />
+    <script
+      src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"
+      type="text/javascript"
+    ></script>
+  </head>
+  <body>
+    <div class="settings">
+      <div class="form-input">
+        <label>Circle width</label>
+        <input id="form-width" type="number" placeholder="50" value="50" />
+      </div>
+      <div class="form-input">
+        <label>Growth amount</label>
+        <input
+          id="form-growth-amount"
+          type="number"
+          placeholder="10"
+          value="10"
+        />
+      </div>
+      <div class="form-input">
+        <label>Grow rate</label>
+        <input id="form-rate" type="number" placeholder="250" value="250" />
+      </div>
+      <div class="form-input">
+        <label>Number of circles</label>
+        <input
+          id="form-number-of-circles"
+          type="number"
+          placeholder="1"
+          value="1"
+        />
+      </div>
+      <button id="start">Start</button>
+    </div>
+    <div id="container"><div class="circle"></div></div>
+    <script src="/js/clean.js"></script>
+  </body>
+</html>
